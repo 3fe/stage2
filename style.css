@@ -1,0 +1,59 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.logo-div1 {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	/*background-color: #F4F505;*/
+	background-color: #fff;
+	border-radius: 50px;
+	margin-left: 10%;
+}
+
+.logo-div2 {
+	position: absolute;
+
+	width: 50px;
+	height: 50px;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -25px;
+
+	/* font-size must be this div */
+	font-size: xx-large;
+
+	text-align: center;
+}
+
+.logo-title {
+	font-family: 'Lobster', cursice;
+	color: #337AB7;
+
+	vertical-align: middle;
+}
+
+header {
+	background-color: #337AB7;
+	padding: 20px;
+}
+
+body > div {
+	margin: 30px 80px 30px 80px;
+}
+
+h1, h2 {
+	margin: 20px;
+}
+
+.stage {
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	color: #31708f;
+	padding: 20px;
+	border-radius: 5px;
+}
+
