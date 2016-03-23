@@ -4,20 +4,52 @@
 	<title>第二阶段</title>
 	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css" charset="utf-8">
-	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="http://fonts.useso.com/css?family=Lobster" >
+	<link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://rawgit.com/guodongxiaren/wang.js/master/wang.js"></script>
+
 
 </head>
 <body>
-<header>
-	<div class="logo-div1">
-		<div class="logo-div2">
-			<label class="logo-title">Fe</label>
+	<header>
+		<div class="logo-div1">
+			<div class="logo-div2">
+				<label class="logo-title">Fe</label>
+			</div>
 		</div>
-	</div>
-</header>
-<div>
-	<div class="stage">第二阶段</div>
-	<h2>主要是训练JavaScript</h2>
-	</div>
+	</header>
+	<main class="container">
+		<div class="stage">第二阶段</div>
+		<h2>主要是训练JavaScript</h2>
+
+		
+		<div class="row">
+
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="task-info">
+					<a class="tasklink" href="{{url}}">
+						<div class="task-title">{{title}}</div>
+					</a>
+					<span class="diff">难度:{{difficulty}}</span>
+					<span><a href="{{taskurl}}">原题地址</a></span>
+				</div>
+			</div>
+
+		</div>
+	</main>
+	<script type="text/javascript">
+	(function() {
+		var pe = lightPat(".col-lg-3");
+		var prefix = "http://ife.baidu.com/task/detail?taskId=";
+		$(".row").html("");
+		$.getJSON('task.json', function(json) {
+			$.each(json, function(key, val) {
+				val.taskurl = prefix + val.taskId;
+				$(".row").append(pe(val));
+			});
+		});	
+	})();
+	</script>
 </body>
 </html>
