@@ -26,7 +26,7 @@
 		
 		<div class="row">
 
-			<div class="col-lg-3 col-md-4 col-sm-6">
+			<div class="task-div col-lg-3 col-md-4 col-sm-6">
 				<div class="task-info">
 					<a class="tasklink" href="{{url}}">
 						<div class="task-title">{{title}}</div>
@@ -40,7 +40,7 @@
 	</main>
 	<script type="text/javascript">
 	(function() {
-		var pe = lightPat(".col-lg-3");
+		var pe = lightPat(".task-div");
 		var prefix = "http://ife.baidu.com/task/detail?taskId=";
 		$(".row").html("");
 		$.getJSON('task.json', function(json) {
