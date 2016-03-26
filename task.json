@@ -10,5 +10,11 @@
 		"title": "任务十四：零基础JavaScript编码（二）",
 		"difficulty": "简单",
 		"taskId": "14"
+	},
+	{
+		"url": "./task15/index.html",
+		"title": "任务十五：零基础JavaScript编码（三）",
+		"difficulty": "简单",
+		"taskId": "15"
 	}
 ]
