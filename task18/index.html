@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务十八</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	main {
+		padding: 10px;
+	}
+
+	button {
+		border-radius: 4px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		padding-right: 4px;
+		padding-left: 4px;
+	}
+	#lpop {
+		margin-left: 30px;
+	}
+
+	.number {
+		display: inline-block;
+		margin: 2px;
+		width: 20px;
+		padding: 10px;
+
+		background-color: #f00;
+		color: #fff;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	</style>
+</head>
+<body>
+<main>
+	<input id="num_input">
+	<button id="lpush">左侧入</button>
+	<button id="rpush">右侧入</button>
+	<button id="lpop">左侧出</button>
+	<button id="rpop">右侧出</button>
+	<div id="canvas">
+	</div>
+</main>
+<script type="text/javascript">
+function isNum(num) {
+	var str = num.replace(/(^\s*)|(\s*$)/g, '');
+	return (str != "" && !isNaN(str));
+}
+
+(function() {
+	var nums = [];
+
+	var buttons = document.querySelectorAll("button");
+	for (var i = 0; i < buttons.length; i++) {
+		buttons[i].onclick = function() {
+			var input = document.getElementById("num_input");
+			var num   = input.value;
+			switch (this.id) {
+				case "lpush": 
+					if (isNum(num)) {
+						nums.unshift(num);
+					}
+					break;
+				case "rpush": 
+					if (isNum(num)) {
+						nums.push(num);break;
+					} 
+				case "lpop": 
+				    if (nums.length > 0) {
+						input.value = nums[0];
+						nums.shift(num);
+					}
+					break;
+				case "rpop": 
+				    if (nums.length > 0) {
+						input.value = nums[0];
+			            nums.pop(num);
+				    }
+		            break;
+			}
+			var canvas = document.getElementById("canvas");
+			canvas.innerHTML = "";
+			var length = nums.length;
+			for (var i = 0; i < length; i++) {
+				var div = "<div class='number'>"+nums[i]+"</div>";
+				canvas.innerHTML += div;
+			}
+
+
+		}
+	}
+})();
+</script>
+</body>
+</html>
