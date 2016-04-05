@@ -8,6 +8,7 @@
 		margin: 0;
 		padding: 0;
 	}
+
 	main {
 		padding: 10px;
 	}
@@ -19,6 +20,7 @@
 		padding-right: 4px;
 		padding-left: 4px;
 	}
+
 	#lpop {
 		margin-left: 30px;
 	}
@@ -35,11 +37,15 @@
 		text-align: center;
 	}
 
+	.number:hover {
+		cursor: pointer;
+	}
+
 	</style>
 </head>
 <body>
 <main>
-	<input id="num_input">
+	<input id="num_input" type="number">
 	<button id="lpush">左侧入</button>
 	<button id="rpush">右侧入</button>
 	<button id="lpop">左侧出</button>
@@ -48,6 +54,13 @@
 	</div>
 </main>
 <script type="text/javascript">
+function removeNum(e) {
+	var parent = e.parentNode;
+	if (parent) {
+		parent.removeChild(e);
+	}
+}
+
 function isNum(num) {
 	var str = num.replace(/(^\s*)|(\s*$)/g, '');
 	return (str != "" && !isNaN(str));
@@ -88,7 +101,7 @@ function isNum(num) {
 			canvas.innerHTML = "";
 			var length = nums.length;
 			for (var i = 0; i < length; i++) {
-				var div = "<div class='number'>"+nums[i]+"</div>";
+				var div = "<div class='number' id="+nums[i] +" onclick='removeNum(this)'>"+nums[i]+"</div>";
 				canvas.innerHTML += div;
 			}
 
