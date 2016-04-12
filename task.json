@@ -24,6 +24,12 @@
 		"taskId": "16"
 	},
 	{
+		"url": "./task17/index.html",
+		"title": "任务十七：零基础JavaScript编码（五）",
+		"difficulty": "中等",
+		"taskId": "17"
+	},
+	{
 		"url": "./task18/index.html",
 		"title": "任务十八：基础JavaScript练习（一）",
 		"difficulty": "简单",
